@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://d1pvce2w52la3"
+path="res://.godot/imported/model.sdf-0d84180faa84d7afb1d38056b47b9da0.tscn"
+
+[deps]
+
+source_file="res://fuel_models/BPCart/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-0d84180faa84d7afb1d38056b47b9da0.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

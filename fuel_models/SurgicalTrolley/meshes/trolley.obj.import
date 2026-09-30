@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dky4emj66yn44"
+path="res://.godot/imported/trolley.obj-c0d10aabb3c6e96537bec075c3cd31e6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trolley.obj-c0d10aabb3c6e96537bec075c3cd31e6.mesh"]
+
+source_file="res://fuel_models/SurgicalTrolley/meshes/trolley.obj"
+dest_files=["res://.godot/imported/trolley.obj-c0d10aabb3c6e96537bec075c3cd31e6.mesh", "res://.godot/imported/trolley.obj-c0d10aabb3c6e96537bec075c3cd31e6.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

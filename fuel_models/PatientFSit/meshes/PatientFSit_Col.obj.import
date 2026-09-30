@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://1dbm1cvlu1sf"
+path="res://.godot/imported/PatientFSit_Col.obj-0d8908813c9d067b09fa8ed2bc217bfd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PatientFSit_Col.obj-0d8908813c9d067b09fa8ed2bc217bfd.mesh"]
+
+source_file="res://fuel_models/PatientFSit/meshes/PatientFSit_Col.obj"
+dest_files=["res://.godot/imported/PatientFSit_Col.obj-0d8908813c9d067b09fa8ed2bc217bfd.mesh", "res://.godot/imported/PatientFSit_Col.obj-0d8908813c9d067b09fa8ed2bc217bfd.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

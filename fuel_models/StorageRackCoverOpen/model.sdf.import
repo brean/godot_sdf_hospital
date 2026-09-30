@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://44tp3vlxsw3d"
+path="res://.godot/imported/model.sdf-515d852d02d56ed429447896d349abca.tscn"
+
+[deps]
+
+source_file="res://fuel_models/StorageRackCoverOpen/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-515d852d02d56ed429447896d349abca.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

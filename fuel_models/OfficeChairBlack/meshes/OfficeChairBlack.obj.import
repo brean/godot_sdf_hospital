@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dldvtt3mektus"
+path="res://.godot/imported/OfficeChairBlack.obj-ef1e033b59d54df9ea8322f2968a539c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/OfficeChairBlack.obj-ef1e033b59d54df9ea8322f2968a539c.mesh"]
+
+source_file="res://fuel_models/OfficeChairBlack/meshes/OfficeChairBlack.obj"
+dest_files=["res://.godot/imported/OfficeChairBlack.obj-ef1e033b59d54df9ea8322f2968a539c.mesh", "res://.godot/imported/OfficeChairBlack.obj-ef1e033b59d54df9ea8322f2968a539c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://cd84u0j0h4oll"
+path="res://.godot/imported/model.sdf-7491c85f2052bef40f188fc40179dd4b.tscn"
+
+[deps]
+
+source_file="res://fuel_models/AnesthesiaMachine/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-7491c85f2052bef40f188fc40179dd4b.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

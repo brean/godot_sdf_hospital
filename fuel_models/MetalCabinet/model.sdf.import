@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://1d51qev62nii"
+path="res://.godot/imported/model.sdf-d6c85449141e6c68c11b2a94f6ed11a2.tscn"
+
+[deps]
+
+source_file="res://fuel_models/MetalCabinet/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-d6c85449141e6c68c11b2a94f6ed11a2.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

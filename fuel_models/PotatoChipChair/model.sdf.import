@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://dhcou51as7g8s"
+path="res://.godot/imported/model.sdf-5eff0d69966513e8066ab234398dc997.tscn"
+
+[deps]
+
+source_file="res://fuel_models/PotatoChipChair/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-5eff0d69966513e8066ab234398dc997.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://du33enmp2bxsp"
+path="res://.godot/imported/MalePatientBed.obj-05950a0604846fcc3089eb861108adfd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MalePatientBed.obj-05950a0604846fcc3089eb861108adfd.mesh"]
+
+source_file="res://fuel_models/MalePatientBed/meshes/MalePatientBed.obj"
+dest_files=["res://.godot/imported/MalePatientBed.obj-05950a0604846fcc3089eb861108adfd.mesh", "res://.godot/imported/MalePatientBed.obj-05950a0604846fcc3089eb861108adfd.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -54,4 +54,3 @@ func parse(parser: SDFParser):
 func error_if_set(existing: Resource, tag: String) -> void:
 	if existing:
 		push_error("Only one <%s> is allowed directly in <sdf>, using the last one" % tag)
-

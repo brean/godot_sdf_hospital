@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://tqpxqomj5wwd"
+path="res://.godot/imported/model.sdf-f65df25cc9d75e1e2c6559efd674a641.tscn"
+
+[deps]
+
+source_file="res://fuel_models/ParkingTrolleyMax/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-f65df25cc9d75e1e2c6559efd674a641.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

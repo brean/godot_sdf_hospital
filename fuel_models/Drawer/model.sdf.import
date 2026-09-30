@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://dex6qmnic1e0f"
+path="res://.godot/imported/model.sdf-dd5bdf9ed8138389b6bfae59fb0ae3a8.tscn"
+
+[deps]
+
+source_file="res://fuel_models/Drawer/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-dd5bdf9ed8138389b6bfae59fb0ae3a8.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

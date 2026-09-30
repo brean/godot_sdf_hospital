@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://bkhcm6sjj6kjr"
+path="res://.godot/imported/model.sdf-15264d1c30ae0af4356a41dc8560abb9.tscn"
+
+[deps]
+
+source_file="res://fuel_models/Shower/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-15264d1c30ae0af4356a41dc8560abb9.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://enl0sty38yt2"
+path="res://.godot/imported/model.sdf-87d6657ebedc3d9dc44ef34d0c951437.tscn"
+
+[deps]
+
+source_file="res://fuel_models/BedsideTable/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-87d6657ebedc3d9dc44ef34d0c951437.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

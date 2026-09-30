@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://bx1r7sqcygl00"
+path="res://.godot/imported/model.sdf-b19d9b215c21f13efe918067b0062ece.tscn"
+
+[deps]
+
+source_file="res://fuel_models/OfficeChairBlack/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-b19d9b215c21f13efe918067b0062ece.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://dr3af1qcw6qqt"
+path="res://.godot/imported/model.sdf-564dcd39890ed5553a8a3979df4e62e7.tscn"
+
+[deps]
+
+source_file="res://fuel_models/VendingMachine/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-564dcd39890ed5553a8a3979df4e62e7.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

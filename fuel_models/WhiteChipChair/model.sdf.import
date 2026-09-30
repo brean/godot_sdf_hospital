@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://bt6086dno448e"
+path="res://.godot/imported/model.sdf-ce7a5a73f1ede71f5f032e5d53f5b9ec.tscn"
+
+[deps]
+
+source_file="res://fuel_models/WhiteChipChair/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-ce7a5a73f1ede71f5f032e5d53f5b9ec.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

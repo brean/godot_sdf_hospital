@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://b3rq5npvucboe"
+path="res://.godot/imported/model.sdf-baf6c128f01132815ccff96a3d936244.tscn"
+
+[deps]
+
+source_file="res://fuel_models/Scrubs/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-baf6c128f01132815ccff96a3d936244.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

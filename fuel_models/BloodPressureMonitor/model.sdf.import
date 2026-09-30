@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://dki0j0f5us3lb"
+path="res://.godot/imported/model.sdf-dab7d8c0557d57cbf4096530aa58bae1.tscn"
+
+[deps]
+
+source_file="res://fuel_models/BloodPressureMonitor/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-dab7d8c0557d57cbf4096530aa58bae1.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

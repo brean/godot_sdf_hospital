@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://dtilg3mp4cdnm"
+path="res://.godot/imported/model.sdf-b47580e165788d6707468e77a0059bad.tscn"
+
+[deps]
+
+source_file="res://fuel_models/MaleVisitorOnPhone/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-b47580e165788d6707468e77a0059bad.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

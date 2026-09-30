@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://dvcfjjwwxu1g8"
+path="res://.godot/imported/model.sdf-e567c45dffb4b2a193c02b49ca76b636.tscn"
+
+[deps]
+
+source_file="res://fuel_models/MalePatientBed/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-e567c45dffb4b2a193c02b49ca76b636.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

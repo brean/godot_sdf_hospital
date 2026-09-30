@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://cjllm7q8fr8db"
+path="res://.godot/imported/model.sdf-62f68007249b07f8737ce4f6051bc4c3.tscn"
+
+[deps]
+
+source_file="res://fuel_models/PatientWheelChair/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-62f68007249b07f8737ce4f6051bc4c3.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

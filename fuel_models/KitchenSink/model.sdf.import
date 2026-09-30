@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://cfcun0xcvchn0"
+path="res://.godot/imported/model.sdf-0c5591a1a6ede14da7362869ef49bb96.tscn"
+
+[deps]
+
+source_file="res://fuel_models/KitchenSink/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-0c5591a1a6ede14da7362869ef49bb96.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")

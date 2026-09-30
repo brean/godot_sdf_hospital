@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://buhuh00hp4iwp"
+path="res://.godot/imported/ElderMalePatient.obj-d7181b5ebe90f68cf48c24180cfdce56.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ElderMalePatient.obj-d7181b5ebe90f68cf48c24180cfdce56.mesh"]
+
+source_file="res://fuel_models/ElderMalePatient/meshes/ElderMalePatient.obj"
+dest_files=["res://.godot/imported/ElderMalePatient.obj-d7181b5ebe90f68cf48c24180cfdce56.mesh", "res://.godot/imported/ElderMalePatient.obj-d7181b5ebe90f68cf48c24180cfdce56.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

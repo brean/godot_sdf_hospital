@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://dpm0fjsxtrb3h"
+path="res://.godot/imported/model.sdf-33292d85444305348ac6d6e5f9a0dbf6.tscn"
+
+[deps]
+
+source_file="res://fuel_models/MaleVisitorSit/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-33292d85444305348ac6d6e5f9a0dbf6.tscn"]
+
+[params]
+
+model_folders=PackedStringArray("res://models")
