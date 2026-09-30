@@ -33,7 +33,7 @@ func to_godot(
 	# 	var light = world.lights[light_name]
 	# 	lights_node.add_child(light.to_godot())
 
-	if world.model:
-		SDFUtils.create_body(world.model, false, self, owner_node)
+	for model in world.models:
+		SDFUtils.create_body(model, false, self, owner_node)
 
 	return self

@@ -74,8 +74,8 @@ func load_root(sdf_root: SDFRoot):
 		_add_item(world_item, "physics", engine, world.physics)
 		for plugin in world.plugins:
 			_add_item(world_item, "plugin", plugin.name, plugin)
-		if world.model:
-			_add_model(world_item, world.model)
+		for model in world.models:
+			_add_model(world_item, model)
 	if sdf_root.model:
 		_add_model(root_item, sdf_root.model)
 

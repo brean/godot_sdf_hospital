@@ -19,7 +19,7 @@ var lights: Dictionary = {}  # name -> SDFLight
 # TODO: frame
 
 @export var joint: SDFJoint
-@export var model: SDFModel
+@export var models: Array[SDFModel] = []
 @export var actor: SDFActor
 @export var plugins: Array[SDFPlugin] = []
 # for now we ignore road
@@ -50,7 +50,7 @@ func parse(parser: SDFParser):
 			"model":
 				var model = SDFModel.new()
 				model.parse(parser)
-				self.model = model
+				self.models.append(model)
 			"include":
 				var include = SDFInclude.new()
 				include.parse(parser)
