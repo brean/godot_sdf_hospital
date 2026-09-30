@@ -43,10 +43,18 @@ func parse(parser: SDFParser):
 		if node_type != XMLParser.NODE_ELEMENT:
 			continue
 		match parser.get_node_name():
+			"gravity":
+				self.gravity = XMLHelper.text_to_vector3(parser, self.gravity)
+			"scene":
+				self.scene.parse(parser)
 			"physics":
 				self.physics = parse_physics(parser)
 			"plugin":
 				self.plugins.append(parse_plugin(parser))
+			"light":
+				var light = SDFLight.new()
+				light.parse(parser)
+				self.add_light(light)
 			"model":
 				var model = SDFModel.new()
 				model.parse(parser)
@@ -57,7 +65,9 @@ func parse(parser: SDFParser):
 				var element = include.instantiate(parser)
 				if element is SDFModel:
 					self.models.append(element)
-				# TODO: included actors and lights
+				elif element is SDFLight:
+					self.add_light(element)
+				# TODO: included actors
 			_:
 				XMLHelper.skip_unknown(parser, "world")
 

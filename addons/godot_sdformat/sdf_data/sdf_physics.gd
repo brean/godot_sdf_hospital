@@ -40,4 +40,4 @@ func parse(parser: XMLParser):
 				self.real_time_update_rate = XMLHelper.text_to_float(parser, self.real_time_update_rate)
 			_:
 				# TODO: ode ... and its specifics translated to jolt?
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, "physics")

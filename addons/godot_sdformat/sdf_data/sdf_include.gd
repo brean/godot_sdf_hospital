@@ -42,7 +42,7 @@ func parse(parser: XMLParser):
 				plugin.parse(parser)
 				self.plugins.append(plugin)
 			"model_state":
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, "include")
 			_:
 				XMLHelper.skip_unknown(parser, "include")
 

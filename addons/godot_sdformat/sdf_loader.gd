@@ -7,7 +7,7 @@ extends Node3D
 @export_tool_button("Reload SDF", "WorldEnvironment") var _load_sdf_button = _load_sdf
 
 @export_group("Model Directory")
-@export_dir var model_folder: String = "res://models"
+@export_dir var model_folders: PackedStringArray = ["res://gazebo_builtin_models"]
 
 @export_group("Transform")
 @export var _position: Vector3 = Vector3(0, 0, 0)
@@ -23,7 +23,7 @@ func _load_sdf():
 		return
 
 	var options = SDFOptions.new()
-	options.model_folder = model_folder
+	options.model_folders = model_folders
 
 	var parser = SDFParser.new(options)
 	var _root = get_tree().edited_scene_root

@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""Writes one overview of the licenses and license holders of all models in
+the given model folders, so the project can be shipped with all its models.
+
+Where the license of a model comes from, in this order:
+  <model>/ATTRIBUTION.txt   written by download_fuel_models.py (Fuel models)
+  <model>/LICENSE           e.g. the Gazebo models sun and ground_plane
+  <folder>/LICENSE          e.g. a copy of the LICENSE of the repository the
+                            models come from, like aws-robomaker-hospital-world
+The authors are read from <model>/model.config.
+
+Example, run in the Godot project folder:
+  python3 addons/godot_sdformat/tools/write_license_notice.py \\
+      -m models -m gazebo_models -m fuel_models -o MODEL_LICENSES.md
+"""
+import argparse
+import pathlib
+import re
+import sys
+
+# (text in the LICENSE file, license name, license url)
+KNOWN_LICENSES = [
+    ("Creative Commons Attribution 4.0", "CC BY 4.0",
+     "https://creativecommons.org/licenses/by/4.0/"),
+    ("Creative Commons Attribution 3.0", "CC BY 3.0",
+     "https://creativecommons.org/licenses/by/3.0/"),
+    ("Apache License", "Apache-2.0", "https://www.apache.org/licenses/LICENSE-2.0"),
+]
+MIT_GRANT = "Permission is hereby granted, free of charge"
+MIT_CONDITION = "shall be included in all copies"  # missing in MIT-0
+
+
+def read_text(path: pathlib.Path) -> str:
+    return path.read_text(encoding="utf-8", errors="replace")
+
+
+def authors(model: pathlib.Path) -> str:
+    """Read with regular expressions, some model.config are no valid XML."""
+    config = model / "model.config"
+    if not config.exists():
+        return ""
+    names = []
+    for author in re.findall(r"<author>(.*?)</author>", read_text(config), re.S):
+        name = re.search(r"<name>(.*?)</name>", author, re.S)
+        email = re.search(r"<email>(.*?)</email>", author, re.S)
+        name = name.group(1).strip() if name else ""
+        email = email.group(1).strip() if email else ""
+        if name or email:
+            names.append(f"{name} ({email})" if name and email else name or email)
+    return ", ".join(names)
+
+
+def license_file(path: pathlib.Path) -> dict:
+    text = read_text(path)
+    license = {"name": f"see {path.name}", "url": "", "file": path}
+    for phrase, name, url in KNOWN_LICENSES:
+        if phrase in text:
+            license.update(name=name, url=url)
+    if MIT_GRANT in text:
+        if MIT_CONDITION in text:
+            license.update(name="MIT", url="https://spdx.org/licenses/MIT.html")
+        else:
+            license.update(name="MIT-0", url="https://spdx.org/licenses/MIT-0.html")
+    copyright = re.search(r"^\s*(Copyright .+?)\s*$", text, re.M)
+    license["holder"] = copyright.group(1) if copyright else ""
+    return license
+
+
+def attribution_file(path: pathlib.Path) -> dict:
+    values = dict(
+        line.split(": ", 1) for line in read_text(path).splitlines() if ": " in line)
+    name, url = values.get("License", "unknown"), values.get("License URL", "")
+    for phrase, known_name, known_url in KNOWN_LICENSES:
+        if phrase in name:  # same names as for LICENSE files
+            name, url = known_name, known_url
+    return {
+        "name": name,
+        "url": url,
+        "holder": values.get("Owner", ""),
+        "source": values.get("Source", ""),
+        "file": path,
+    }
+
+
+def model_license(model: pathlib.Path) -> dict | None:
+    if (model / "ATTRIBUTION.txt").exists():
+        return attribution_file(model / "ATTRIBUTION.txt")
+    for path in [model / "LICENSE", model.parent / "LICENSE"]:
+        if path.exists():
+            return license_file(path)
+    return None
+
+
+def link(text: str, url: str) -> str:
+    return f"[{text}]({url})" if url else text
+
+
+def main() -> int:
+    arguments = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    arguments.add_argument("-m", "--model-folder", type=pathlib.Path, action="append",
+                           required=True, help="model folder, can be repeated")
+    arguments.add_argument("-o", "--output", type=pathlib.Path,
+                           default=pathlib.Path("MODEL_LICENSES.md"))
+    args = arguments.parse_args()
+
+    rows = {}  # folder -> [(model, authors, license)]
+    missing = []
+    for folder in args.model_folder:
+        rows[folder] = []
+        models = [d for d in folder.iterdir() if (d / "model.config").exists()]
+        for model in sorted(models, key=lambda d: d.name.lower()):
+            license = model_license(model)
+            if license is None:
+                missing.append(model)
+                continue
+            rows[folder].append((model, authors(model), license))
+
+    lines = [
+        "# Model licenses",
+        "",
+        "This project includes 3D models of other authors. They are unmodified,",
+        "Godot's import only converts their formats. The licenses of the project",
+        "itself do not apply to them, each model keeps its own license below.",
+        "",
+        "Generated by `addons/godot_sdformat/tools/write_license_notice.py`.",
+        "",
+        "## Summary",
+        "",
+        "| Folder | License | License holder | Models |",
+        "| --- | --- | --- | --- |",
+    ]
+    for folder, models in rows.items():
+        groups = {}
+        for _, _, license in models:
+            key = (license["name"], license["url"], license["holder"])
+            groups[key] = groups.get(key, 0) + 1
+        for (name, url, holder), count in groups.items():
+            lines.append(f"| `{folder.as_posix()}` | {link(name, url)} | {holder} | {count} |")
+
+    for folder, models in rows.items():
+        lines += ["", f"## `{folder.as_posix()}`", "",
+                  "| Model | Authors (model.config) | License | License holder | Source |",
+                  "| --- | --- | --- | --- | --- |"]
+        for model, model_authors, license in models:
+            source = license.get("source") or f"`{license['file'].as_posix()}`"
+            lines.append(
+                f"| {model.name} | {model_authors} | {link(license['name'], license['url'])} "
+                f"| {license['holder']} | {source} |")
+
+    args.output.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    count = sum(len(models) for models in rows.values())
+    print(f"Wrote {args.output} with {count} models.")
+    if missing:
+        print("No license found for: " + ", ".join(m.as_posix() for m in missing), file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

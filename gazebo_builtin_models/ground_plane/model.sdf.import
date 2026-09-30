@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://hykpyehwdk2x"
+path="res://.godot/imported/model.sdf-f3884efe96d8a5694772cf9fbef28aaf.tscn"
+
+[deps]
+
+source_file="res://gazebo_builtin_models/ground_plane/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-f3884efe96d8a5694772cf9fbef28aaf.tscn"]
+
+[params]
+
+model_folder="res://models"

@@ -17,10 +17,10 @@ func _get_save_extension() -> String:
 func _get_import_options(_path: String, _preset_index: int) -> Array[Dictionary]:
 	return [
 		{
-			"name": "model_folder",
-			"default_value": "res://models",
-			"property_hint": PROPERTY_HINT_GLOBAL_DIR,
-			"hint_string": ""
+			"name": "model_folders",
+			"default_value": PackedStringArray(["res://models"]),
+			"property_hint": PROPERTY_HINT_TYPE_STRING,
+			"hint_string": "%d/%d:" % [TYPE_STRING, PROPERTY_HINT_DIR]
 		},
 	]
 	
@@ -47,7 +47,7 @@ func _import(
 		_platform_variants: Array[String], _gen_files: Array[String]) -> Error:
 	var scene = PackedScene.new()
 	var sdf_options = SDFOptions.new()
-	sdf_options.model_folder = options["model_folder"]
+	sdf_options.model_folders = options["model_folders"]
 	var sdf_parser = SDFParser.new(sdf_options)
 
 	# Create a new directory for the imported scene

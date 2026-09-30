@@ -43,7 +43,7 @@ func parse(parser: XMLParser):
 			"contact":
 				_parse_contact(parser)
 			"soft_contact":
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, "surface")
 			_:
 				XMLHelper.skip_unknown(parser, "surface")
 
@@ -81,7 +81,7 @@ func _parse_friction(parser: XMLParser):
 			"ode":
 				_parse_friction_ode(parser)
 			"bullet":
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, "friction")
 			_:
 				XMLHelper.skip_unknown(parser, "friction")
 
@@ -99,7 +99,7 @@ func _parse_torsional(parser: XMLParser):
 				self.torsional_coefficient = XMLHelper.text_to_float(
 					parser, self.torsional_coefficient)
 			"use_patch_radius", "patch_radius", "surface_radius", "ode":
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, "torsional")
 			_:
 				XMLHelper.skip_unknown(parser, "torsional")
 
@@ -160,6 +160,6 @@ func _parse_contact(parser: XMLParser):
 				self.elastic_modulus = XMLHelper.text_to_float(
 					parser, self.elastic_modulus)
 			"ode", "bullet":
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, "contact")
 			_:
 				XMLHelper.skip_unknown(parser, "contact")

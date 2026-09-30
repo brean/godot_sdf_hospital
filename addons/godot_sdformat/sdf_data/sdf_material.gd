@@ -38,6 +38,6 @@ func parse(parser: XMLParser):
 			"emissive":
 				self.emissive = XMLHelper.text_to_color(parser, self.emissive)
 			"script", "shader", "pbr":
-				parser.skip_section()  # TODO
+				XMLHelper.skip_unknown(parser, "material")  # TODO
 			_:
 				XMLHelper.skip_unknown(parser, "material")

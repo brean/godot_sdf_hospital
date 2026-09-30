@@ -123,7 +123,7 @@ func _parse_shape(parser: SDFParser):
 			"pos":
 				self.heightmap_pos = XMLHelper.text_to_vector3(parser, self.heightmap_pos)
 			"convex_decomposition", "texture", "blend", "use_terrain_paging", "sampling":
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, shape)
 			_:
 				XMLHelper.skip_unknown(parser, shape)
 
@@ -166,7 +166,10 @@ func create_godot_shape(convex: bool = false) -> Shape3D:
 			shape.height = length + 2.0 * radius  # Godot height includes the caps
 			return shape
 		GeometryType.PLANE:
-			return BoxShape3D.new()  # Simplified as flat box for now
+			# collision planes are infinite, the normal in Godot axes
+			var shape = WorldBoundaryShape3D.new()
+			shape.plane = Plane(URDFUtils.URDF_TO_GODOT * normal.normalized(), 0.0)
+			return shape
 		GeometryType.MESH:
 			var faces = _mesh_faces()
 			if convex:

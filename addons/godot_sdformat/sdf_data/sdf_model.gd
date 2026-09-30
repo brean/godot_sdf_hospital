@@ -75,7 +75,7 @@ func parse(parser: XMLParser):
 				model.parse(parser)
 				self.models.append(model)
 			"gripper", "model_state":
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, "model")
 			_:
 				XMLHelper.skip_unknown(parser, "model")
 

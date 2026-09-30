@@ -44,7 +44,7 @@ func parse(parser: SDFParser):
 			"camera":
 				_parse_camera(parser)
 			_:
-				parser.skip_section()  # other sensor types, plugins, ...
+				XMLHelper.skip_unknown(parser, "sensor")  # other sensor types, plugins, ...
 
 func _parse_camera(parser: SDFParser):
 	if parser.is_empty():
@@ -63,7 +63,7 @@ func _parse_camera(parser: SDFParser):
 			"clip":
 				_parse_clip(parser)
 			_:
-				parser.skip_section()  # noise, distortion, lens, ...
+				XMLHelper.skip_unknown(parser, "camera")  # noise, distortion, lens, ...
 
 func _parse_image(parser: SDFParser):
 	if parser.is_empty():
@@ -82,7 +82,7 @@ func _parse_image(parser: SDFParser):
 			"format":
 				self.image_format = XMLHelper.text_to_string(parser)
 			_:
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, "image")
 
 func _parse_clip(parser: SDFParser):
 	if parser.is_empty():
@@ -99,4 +99,4 @@ func _parse_clip(parser: SDFParser):
 			"far":
 				self.clip_far = XMLHelper.text_to_float(parser, self.clip_far)
 			_:
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, "clip")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="godot_sdformat"
+type="PackedScene"
+uid="uid://s8qkp40ouu4a"
+path="res://.godot/imported/model.sdf-7b6add19587d4e6ef9b91f3eec77161a.tscn"
+
+[deps]
+
+source_file="res://gazebo_builtin_models/sun/model.sdf"
+dest_files=["res://.godot/imported/model.sdf-7b6add19587d4e6ef9b91f3eec77161a.tscn"]
+
+[params]
+
+model_folder="res://models"

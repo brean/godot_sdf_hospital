@@ -17,5 +17,5 @@ func to_godot(
 	self.fov = rad_to_deg(sensor.horizontal_fov)
 	self.near = sensor.clip_near
 	self.far = sensor.clip_far
-	self.parent_node.add_child(self)
+	parent_node.add_child(self)
 	self.owner = owner_node

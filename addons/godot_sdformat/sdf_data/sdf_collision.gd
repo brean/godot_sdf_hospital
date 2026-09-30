@@ -33,6 +33,6 @@ func parse(parser: SDFParser):
 				self.surface = SDFSurface.new()
 				self.surface.parse(parser)
 			"auto_inertia_params":
-				parser.skip_section()
+				XMLHelper.skip_unknown(parser, "collision")
 			_:
 				XMLHelper.skip_unknown(parser, "collision")

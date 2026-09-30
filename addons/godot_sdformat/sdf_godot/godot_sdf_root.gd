@@ -21,3 +21,5 @@ func to_godot(
 
 	if sdf_root.model:
 		SDFUtils.create_body(sdf_root.model, false, self, owner_node)
+	if sdf_root.light:
+		SDFUtils.create_light(sdf_root.light, self, owner_node)

@@ -12,7 +12,7 @@ extends SDFElement
 @export var inertial: Dictionary = {}
 @export var collision: Array[SDFCollision] = []
 @export var visual: Array[SDFVisual] = []
-# TODO: sensor
+@export var sensors: Array[SDFSensor] = []
 # TODO: projector
 # TODO: battery
 # TODO: light
@@ -49,7 +49,11 @@ func parse(parser: SDFParser):
 				var visual = SDFVisual.new()
 				visual.parse(parser)
 				self.visual.append(visual)
-			"inertial", "velocity_decay", "sensor", "projector", "audio_sink", "audio_source", "battery", "light", "particle_emitter":
-				parser.skip_section()  # TODO
+			"sensor":
+				var sensor = SDFSensor.new()
+				sensor.parse(parser)
+				self.sensors.append(sensor)
+			"inertial", "velocity_decay", "projector", "audio_sink", "audio_source", "battery", "light", "particle_emitter":
+				XMLHelper.skip_unknown(parser, "link")  # TODO
 			_:
 				XMLHelper.skip_unknown(parser, "link")

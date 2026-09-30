@@ -38,5 +38,29 @@ static func add_links(
 			shape.to_godot(collision, convex, link_transform)
 			body.add_child(shape)
 			shape.owner = owner_node
+		for sensor in link.sensors:
+			if sensor.type == "camera":
+				var camera = GodotSDFCamera3D.new()
+				camera.to_godot(sensor, body, owner_node, link_transform)
+			# TODO: other sensor types
 	for nested_model in model.models:
 		create_body(nested_model, body is StaticBody3D, body, owner_node)
+
+static func create_light(
+		light: SDFLight,
+		parent_node: Node3D,
+		owner_node: Node3D) -> Light3D:
+	var light_node
+	match light.type:
+		"directional":
+			light_node = GodotSDFDirectionalLight3D.new()
+		"point":
+			light_node = GodotSDFOmniLight3D.new()
+		"spot":
+			light_node = GodotSDFSpotLight3D.new()
+		_:
+			push_error("[SDF] Unknown type '%s' of light %s" % [light.type, light.name])
+			return null
+	light_node.to_godot(light, parent_node, owner_node)
+	return light_node
+

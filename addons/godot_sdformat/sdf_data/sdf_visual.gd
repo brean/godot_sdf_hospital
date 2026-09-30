@@ -23,6 +23,6 @@ func parse(parser: SDFParser):
 			"material":
 				self.material.parse(parser)
 			"cast_shadows", "laser_retro", "transparency", "visibility_flags", "meta", "plugin":
-				parser.skip_section()  # TODO
+				XMLHelper.skip_unknown(parser, "visual")  # TODO
 			_:
 				XMLHelper.skip_unknown(parser, "visual")

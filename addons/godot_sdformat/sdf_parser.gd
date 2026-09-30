@@ -129,7 +129,7 @@ func resolve_uri(uri: String) -> String:
 
 func search_paths() -> PackedStringArray:
 	var paths := PackedStringArray()
-	for path in [options.model_folder, _root_dir, current_dir().get_base_dir()]:
+	for path in Array(options.model_folders) + [_root_dir, current_dir().get_base_dir()]:
 		if not path.is_empty() and path not in paths:
 			paths.append(path)
 	return paths

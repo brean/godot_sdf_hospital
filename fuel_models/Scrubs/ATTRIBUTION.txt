@@ -1,0 +1,7 @@
+Model: Scrubs
+Version: 2
+Owner: OpenRobotics
+Source: https://fuel.gazebosim.org/1.0/OpenRobotics/models/Scrubs
+License: Creative Commons Attribution 4.0 International
+License URL: http://creativecommons.org/licenses/by/4.0/
+Modifications: none, downloaded from Gazebo Fuel
